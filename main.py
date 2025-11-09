@@ -1,5 +1,6 @@
 import asyncio
 from kimi_cli.soul import Soul, StatusSnapshot, wire_send
+from kimi_cli.llm import ModelCapability, ALL_MODEL_CAPABILITIES
 from kimi_cli.wire.message import StepBegin
 from kimi_cli.ui.shell import ShellApp
 from kosong.base.message import ContentPart, TextPart
@@ -14,8 +15,12 @@ class EchoSoul(Soul):
         return "EchoSoul"
 
     @property
-    def model(self) -> str:
+    def model_name(self) -> str:
         return "mock"
+
+    @property
+    def model_capabilities(self) -> set[ModelCapability]:
+        return ALL_MODEL_CAPABILITIES
 
     @property
     def status(self) -> StatusSnapshot:
