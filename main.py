@@ -3,7 +3,7 @@ from kimi_cli.soul import Soul, StatusSnapshot, wire_send
 from kimi_cli.llm import ModelCapability, ALL_MODEL_CAPABILITIES
 from kimi_cli.wire.message import StepBegin
 from kimi_cli.ui.shell import ShellApp
-from kosong.base.message import ContentPart, TextPart
+from kosong.message import ContentPart, TextPart
 
 
 class EchoSoul(Soul):
